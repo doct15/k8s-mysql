@@ -1,4 +1,4 @@
-bmcgehee/test-docker-compose1:
+bmcgehee/k8s-mysql:
   Build:
     - echo "Nothing to build"
   PkgInclude:
