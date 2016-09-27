@@ -1,0 +1,19 @@
+bmcgehee/test-docker-compose1:
+  Build:
+    - echo "Nothing to build"
+  PkgInclude:
+    - '*'
+  Env:
+    # Set Env variables here
+    - PORT: "8000"
+  PreInstall:
+    - sudo docker login -u "$DISTELLI_DOCKER_USERNAME" -p "$DISTELLI_DOCKER_PW" -e "$DISTELLI_DOCKER_EMAIL" "$DISTELLI_DOCKER_ENDPOINT"
+  Exec:
+    - pwd
+    - cd $DISTELLI_INSTALLHOME
+    - pwd
+    - ls -l
+    - sudo /usr/local/bin/docker-compose up
+  PostStart:
+    - publicip=$(curl -s ident.me) || true
+    - 'echo "You can validate the install by pointing your browser at http://$publicip:$PORT"'
