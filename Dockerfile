@@ -6,6 +6,7 @@ ENV MYSQL_ROOT_PASSWORD=alexiscool \
 VOLUME  ["/etc/mysql", "/var/lib/mysql"]
 
 ADD run.sh /run.sh
+COPY run.sh /run.sh
 
 EXPOSE 3306
 
