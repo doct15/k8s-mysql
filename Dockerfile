@@ -3,10 +3,15 @@ FROM mysql:5.7
 ENV MYSQL_ROOT_PASSWORD=alexiscool \
     MYSQL_DATABASE=wordpress
 
-VOLUME  ["/etc/mysql", "/var/lib/mysql"]
+RUN apt-get -y update
+RUN apt-get install -y sed
+RUN apt-get install -y net-tools
+RUN apt-get install -y vim
+RUN sed -i "s|#bind-address\t= 127.0.0.1|bind-address = 127.0.0.1|g" /etc/mysql/mysql.conf.d/mysqld.cnf
 
-#COPY run.sh /run.sh
+
+VOLUME  ["/etc/mysql", "/var/lib/mysql"]
 
 EXPOSE 3306
 
-#CMD ["/run.sh"]
+

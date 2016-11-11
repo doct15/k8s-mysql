@@ -12,8 +12,8 @@ bmcgehee2/k8s-mysql:
     #- echo "docker push $DISTELLI_DOCKER_REPO:$DISTELLI_BUILDNUM"
     - docker push "$DISTELLI_DOCKER_REPO:$DISTELLI_BUILDNUM"
     
-  PkgInclude:
-    - '*'
+  #PkgInclude:
+  #  - '*'
   Env:
     # Set Env variables here
     - PORT: "3306"
@@ -25,4 +25,6 @@ bmcgehee2/k8s-mysql:
     - (sudo docker run --name=$cid --rm=true $DISTELLI_DOCKER_PORTS  "$DISTELLI_DOCKER_REPO:$DISTELLI_BUILDNUM") &
     - wait
     - "true"
-
+  PostStart:
+    - publicip=$(curl -s ident.me) || true
+    - 'echo "You can validate the install by pointing your browser at http://$publicip:$PORT"'
