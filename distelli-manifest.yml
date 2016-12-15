@@ -1,7 +1,7 @@
 bmcgehee2/k8s-mysql:
   Build:
     #- echo "docker login -u $DISTELLI_DOCKER_USERNAME -p $DISTELLI_DOCKER_PW -e $DISTELLI_DOCKER_EMAIL $DISTELLI_DOCKER_ENDPOINT"
-    - echo "--Creating Docker Image--"
+    - echo "--Creating Docker Image--" 
     - docker login -u "$DISTELLI_DOCKER_USERNAME" -p "$DISTELLI_DOCKER_PW" -e "$DISTELLI_DOCKER_EMAIL" $DISTELLI_DOCKER_ENDPOINT
     #- echo "docker build --quiet=false -t $DISTELLI_DOCKER_REPO $DISTELLI_DOCKER_PATH"
     - docker build --quiet=false -t "$DISTELLI_DOCKER_REPO" "$DISTELLI_DOCKER_PATH"
