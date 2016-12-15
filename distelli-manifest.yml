@@ -14,7 +14,7 @@ bmcgehee2/k8s-mysql:
   #PkgInclude:
   #  - '*'
   Env:
-    # Set Env variables here
+    # Set Env variables here 
     - PORT: "3306"
   PreInstall:
     - sudo docker login -u "$DISTELLI_DOCKER_USERNAME" -p "$DISTELLI_DOCKER_PW" -e "$DISTELLI_DOCKER_EMAIL" "$DISTELLI_DOCKER_ENDPOINT"
