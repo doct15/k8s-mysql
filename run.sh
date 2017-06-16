@@ -188,4 +188,3 @@ if [ -n "${REPLICATION_SLAVE}" ]; then
 fi
 
 fg
-
