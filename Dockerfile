@@ -1,7 +1,6 @@
 FROM mysql:5.7
 
-ENV MYSQL_ROOT_PASSWORD="$K8S_PASSWORD" \
-    MYSQL_DATABASE=wordpress 
+ENV MYSQL_DATABASE=wordpress 
 
 RUN apt-get -y update && \
 apt-get install -y sed
