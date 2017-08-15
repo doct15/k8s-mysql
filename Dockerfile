@@ -1,7 +1,7 @@
 FROM mysql:5.7
 
 ENV MYSQL_DATABASE=wordpress 
-ENV TEST=testing2
+ENV TEST=testing3
 
 RUN apt-get -y update && \
 apt-get install -y sed
