@@ -11,5 +11,5 @@ RUN apt-get install -y vim
 
 
 VOLUME  ["/etc/mysql", "/var/lib/mysql"]
-ENV TEST=example2
+ENV TEST=example3
 EXPOSE 3306
