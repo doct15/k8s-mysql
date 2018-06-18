@@ -9,7 +9,7 @@ bmcgehee2/k8s-mysql:
     - docker tag "$DISTELLI_DOCKER_REPO" "$DISTELLI_DOCKER_REPO:$DISTELLI_BUILDNUM" 
     - echo "--Pushing Docker Image--"
     #- echo "docker push $DISTELLI_DOCKER_REPO:$DISTELLI_BUILDNUM"
-    - docker push "$DISTELLI_DOCKER_REPO:$DISTELLI_BUILDNUM"  
+    - docker push "$DISTELLI_DOCKER_REPO:$DISTELLI_BUILDNUM"
     
   #PkgInclude:
   #  - '*'
